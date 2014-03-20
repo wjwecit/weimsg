@@ -7,10 +7,10 @@
     </default-config>
 <!-- This app is massive! -->
     <named-config name="weidb">
-       <property name="initialPoolSize">1</property>
-		<property name="maxPoolSize">10</property>
-		<property name="minPoolSize">2</property>
-		<property name="acquireIncrement">3</property>
+       <property name="initialPoolSize">3</property>
+		<property name="maxPoolSize">20</property>
+		<property name="minPoolSize">3</property>
+		<property name="acquireIncrement">5</property>
 		<property name="maxIdleTime">30</property>
 		<property name="maxIdleTimeExcessConnections">1200</property>
 		<property name="maxConnectionAge">27000</property>

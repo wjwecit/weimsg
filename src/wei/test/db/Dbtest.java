@@ -27,6 +27,16 @@ public class Dbtest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		
+		String str="<script type=\"text/javascript\"></script><script type=\"text/javascript\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\"></script>";
+		str=str.replace("\"", "\\\"");
+		System.out.println(str);
+		
+		
+	}
+	
+	static void testdb(){
 		final DbTemplate temp=new DbTemplate();
 		try {
 			temp.doWithinTransaction(new TransactionExecutor() {

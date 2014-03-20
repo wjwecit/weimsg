@@ -338,11 +338,7 @@ public class DbTemplate {
 					e1.printStackTrace();
 				}
 			}finally{
-				try {
-					conn.close();
-				} catch (SQLException ef) {
-					ef.printStackTrace();
-				}
+				dbManager.close(conn);
 			}
 		}
 	}

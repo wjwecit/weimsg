@@ -85,8 +85,7 @@ public class PageTable {
 			while (rsc.next()) {
 				Object rows_o = rsc.getObject(1);
 				totalRow = Integer.parseInt(rows_o.toString());
-				totalPage = (totalRow % pageSize == 0) ? totalRow
-						/ pageSize : (totalRow / pageSize) + 1;
+				totalPage = (totalRow % pageSize == 0) ? totalRow / pageSize : (totalRow / pageSize) + 1;
 				if (this.currentPage > totalPage) {
 					this.currentPage = totalPage;
 				}
@@ -154,13 +153,7 @@ public class PageTable {
 				log.error(e1.getMessage());
 			}
 		} finally {
-			try {
-				if (conn != null) {
-					conn.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			dbManager.close(conn);
 		}
 	}
 
@@ -264,6 +257,9 @@ public class PageTable {
 	}
 	
 	public ArrayList<HashMap<String, String>> getDataArray() {
+		if (!isInited()) {
+			return null;
+		}
 		return dataArray;
 	}
 

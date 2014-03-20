@@ -73,20 +73,21 @@ public class DbManager {
 	 */
 	public synchronized Connection getConnection() {
 		Connection conn = threadSession.get(); // 先从当前线程上取出连接实例
-		if (null == conn) { // 如果当前线程上没有Connection的实例
-			try {
+		try {			
+			if (null == conn || !conn.isClosed()) { // 如果当前线程上没有Connection的实例
 				if (!isInit) {
 					initConnPool();
 				}
 				if (dataSource != null) {
 					conn = dataSource.getConnection(); // 从连接池中取出一个连接实例
-					threadSession.set(conn);  // 把它绑定到当前线程上
+					threadSession.set(conn); // 把它绑定到当前线程上
 				} else {
 					log.error("Connection can not fetch from datasource!");
 				}
-			} catch (SQLException e) {
-				e.printStackTrace();
+
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return conn;
 	}

@@ -13,8 +13,8 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
-import wei.db.util.DbTemplate;
-import wei.db.util.TransactionExecutor;
+import wei.db.common.DbTemplate;
+import wei.db.common.TransactionExecutor;
 import wei.web.mvc.model.AreaChina;
 
 /**

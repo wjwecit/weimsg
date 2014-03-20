@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
-import wei.db.util.DbTemplate;
+import wei.db.common.DbTemplate;
 import wei.web.mvc.model.Pos;
 import wei.web.util.RequestUtils;
 
@@ -18,6 +18,7 @@ import wei.web.util.RequestUtils;
  */
 public class BusinessServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private DbTemplate template;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -31,7 +32,7 @@ public class BusinessServlet extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		
+		template = new DbTemplate();
 	}
 
 	/**
@@ -41,7 +42,7 @@ public class BusinessServlet extends HttpServlet {
 		response.setHeader("Content-Type", "text/html;charset=utf-8");
 		String action=RequestUtils.getString(request, "action");
 		String did=RequestUtils.getString(request, "did");
-		DbTemplate template=new DbTemplate();
+		
 		if(did.length()<1){
 			return;
 		}

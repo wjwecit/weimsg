@@ -33,7 +33,7 @@ public class Dbtest {
 		str=str.replace("\"", "\\\"");
 		System.out.println(str);
 		
-		
+		testdb();
 	}
 	
 	static void testdb(){

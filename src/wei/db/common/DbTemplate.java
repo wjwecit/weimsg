@@ -82,7 +82,7 @@ public class DbTemplate {
 		ResultSetHandler<T> handler = new BeanHandler<T>(clz);
 		try {
 			T bean=run.query(getConnection(),sql,handler);
-			log.debug("query sql:"+sql+";bean="+bean);
+			log.debug("Query SQL:"+sql+";bean="+bean);
 			return bean;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -106,7 +106,7 @@ public class DbTemplate {
 		ResultSetHandler<T> handler = new BeanHandler<T>(clz);
 		try {
 			T bean=run.query(getConnection(),sql,handler,params);
-			log.debug("query sql="+sql+";params="+arrayToString(params)+";bean="+bean);
+			log.debug("Query SQL="+sql+";params="+arrayToString(params)+";bean="+bean);
 			return bean; 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -128,7 +128,7 @@ public class DbTemplate {
 		ResultSetHandler<List<T>> handler = new BeanListHandler<T>(clz);
 		try {
 			List<T> list=run.query(getConnection(),sql,handler);
-			log.debug("query sql="+sql+";listsize="+list.size());
+			log.debug("Query SQL="+sql+";listsize="+list.size());
 			return list;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -148,7 +148,7 @@ public class DbTemplate {
 		MapListHandler handler=new MapListHandler();
 		try {
 			List<Map<String,Object>> list=run.query(getConnection(),sql,handler);
-			log.debug("query sql="+sql+";listsize="+list.size());
+			log.debug("Query SQL="+sql+";listsize="+list.size());
 			return list;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -275,7 +275,7 @@ public class DbTemplate {
 		if(pstmt!=null){
 			pstmt.close();
 		}
-		log.debug("update:"+res+"; sql="+sql+";params="+arrayToString(params)+";");
+		log.debug("Update:"+res+"; SQL="+sql+";params="+arrayToString(params)+";");
 		return res;
 	}
 	

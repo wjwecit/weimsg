@@ -1,0 +1,259 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, table, th, td { list-style-type: none; margin:0; padding:0;}  
+body{ font-size:12px; background-color:#f8f8f8; font-family: Microsoft YaHei,Arial,"����",Helvetica,sans-serif; color:#000;}
+img{border:0; vertical-align:middle;}
+a{ color:#888; text-decoration:none;}
+a:hover{ color:#068EF2; text-decoration:none;}
+.clear{ clear:both;}
+
+
+
+/*��¼ҳ��*//*ע��ҳ��*/
+.header{ background:#FFF; border-bottom:1px solid #dedede; width:100%; height:75px;}
+.header_main{ background-color:#FFF; width:1000px; height:55px; margin:0 auto; padding-top:20px;}
+.header_main .logo{ float:left; width:130px; height:34px;}
+.header_main .logo_line{ float:left; background-color:#ccc; font-size:0; line-height:0; width:2px; height:30px; margin:3px 10px 0 10px;}
+.header_main  h1{ float:left; display:block; font-size:20px; font-family: Microsoft YaHei, "����", Arial; color:#666; height:34px; line-height:38px; padding-left:3px; font-weight:normal;}
+
+
+.middle{ width:1000px; height:auto; background:#f8f8f8; margin:0 auto;}
+.middle .middle_main{ width:896px; height:auto; margin:0 auto; padding-top:25px;}
+.middle_main .main_top{ width:896px; height:17px; background:url(../images/middle_top.jpg) center center no-repeat;}
+.middle_main .main_bottom{ width:896px; height:17px; background:url(../images/middle_bottom.jpg) center center no-repeat;}
+.middle_main .main_center{ width:896px; height:auto; background:url(../images/middle_1px.jpg) center top repeat-y;}
+.main_center .mm_qqlogin{ width:836px; height:180px; border-bottom:1px dashed #dedede; margin:0 30px;}
+.mm_qqlogin h2{ display:block; height:50px; line-height:50px; font-size:16px; color:#999; font-weight:normal; font-family: Microsoft YaHei, "����", Arial; padding-left:140px; width:676px;}
+.mm_qqlogin .qqlogin_btn{ background:url(../images/qqlogin.jpg) center center no-repeat; width:177px; height:39px; display:block; margin:0 auto; margin-top:30px;}
+.mm_qqlogin .qqlogin_btn:hover{ background:url(../images/qqlogin_on.jpg) center center no-repeat; width:177px; height:39px; display:block;}
+.main_center .mm_ddnlogin{ width:836px; height:auto; margin:0 30px;}
+.mm_ddnlogin h2{ display:block; height:40px; line-height:40px; padding-left:140px; width:676px;}
+.mm_ddnlogin h2 .title{ font-size:16px; color:#999; font-weight:normal; font-family: Microsoft YaHei, "����", Arial; float:left;}
+.mm_ddnlogin h2 .register{ font-size:12px; color:#666; font-weight:normal; font-family: Microsoft YaHei, "����", Arial; float:right;}
+.mm_ddnlogin h2 .register a{ color:#F90;}
+.mm_ddnlogin h2 .register a:hover{ color:#068EF2;}
+.mm_ddnlogin p{ color:#333; font-size:14px; margin-top:20px; text-align:left; margin-left:200px;}
+.mm_ddnlogin p span{ color:#F00;}
+.mm_ddnlogin p .label_align{color:#000; display:inline-block; width:150px; padding:0 10px; text-align:right;}
+.mm_ddnlogin p .error{ padding-left:50px;}
+.mm_ddnlogin p .user{ background:url(../images/ddnlogin_input.jpg) left top no-repeat; border:0px; width:195px; height:32px; line-height:32px; padding-left:6px; color:#333; font-size:14px;}
+.mm_ddnlogin p .password{ background:url(../images/ddnlogin_input.jpg) left top no-repeat; border:0px; width:195px; height:32px; line-height:32px; padding-left:6px; color:#333; font-size:14px;}
+.mm_ddnlogin p .sub_login{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px;}
+.mm_ddnlogin p .forget_password{ color:#068EF2; font-size:12px; margin-left:5px;}
+.mm_ddnlogin p .forget_password:hover{ color:#F90; font-size:12px;}
+.mm_ddnlogin .button{ margin-left:350px; display:block; padding-bottom:50px;}
+
+
+.footer{ width:896px; height:auto; background:#f8f8f8; margin:0 auto; margin-top:25px; margin-bottom:10px;}
+.footer p{ text-align:center; width:896px; height:28px; line-height:28px; color:#666;}
+.footer p a{ margin:0 5px;}
+
+
+
+
+/*�������ҳ��*/
+.main_center .forget_info{ width:836px; height:auto; margin:0 30px; border-bottom:1px dashed #dedede;}
+.forget_info .button{ margin-left:260px; display:block; padding-bottom:35px;}
+.forget_info p{ color:#333; font-size:14px; margin-top:20px; text-align:left; margin-left:260px;}
+.forget_info p span{ color:#068EF2;}
+.forget_info p .sub_login{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px;}
+.forget_info h2{ display:block; height:40px; line-height:40px; padding-left:140px; width:676px;}
+
+.main_center .forget_txt{ width:836px; height:auto; margin:0 30px;}
+.forget_txt h2{ display:block; height:40px; line-height:40px; padding-left:140px; width:676px;}
+.forget_txt h2 .title{ font-size:16px; color:#999; font-weight:normal; font-family: Microsoft YaHei, "����", Arial; float:left;}
+.forget_txt .button{ margin-left:260px; display:block; padding-bottom:35px;}
+.forget_txt .last_line{ padding-bottom:80px;}
+.forget_txt p{ font-size:12px; color:#666; margin-top:12px; text-align:left; margin-left:260px;}
+.forget_txt p a{ color:#F90;}
+.forget_txt p a:hover{ color:#068EF2;}
+
+.main_center .edit{ width:836px; height:auto; margin:0 30px;}
+.edit h2{ display:block; height:40px; line-height:40px; padding-left:140px; width:676px;}
+.edit h2 .title{ font-size:16px; color:#999; font-weight:normal; font-family: Microsoft YaHei, "����", Arial; float:left;}
+.edit .button{ margin-left:400px; display:block; padding-bottom:35px;}
+.edit .last_line{ padding-bottom:80px;}
+.edit p{ font-size:14px; color:#666; margin-top:12px; text-align:left; margin-left:200px;}
+.edit p a{ color:#F90;}
+.edit p a:hover{ color:#068EF2;}
+.edit p span{ color:#f00;}
+.edit p .label_align{color:#000; display:inline-block; width:150px; padding:0 10px; text-align:right;}
+.edit p .sub_login{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px;}
+.edit p .user{ background:url(../images/ddnlogin_input.jpg) left top no-repeat; border:0px; width:195px; height:32px; line-height:32px; padding-left:6px; color:#333; font-size:14px;}
+.edit p .edit_cg{ color:#009F20;}
+
+
+
+/*�ҵ��˻�*/
+.accountmiddle_main{ width:1000px; height:auto; margin:0 auto; padding-top:25px;}
+.accountmiddle_main .account_main{ width:1000px; height:110px; margin:0 auto; background:#fff; border:1px solid #ccc;}
+.header_main .exit{ color:#068EF2; display:block; float:right; font-size:14px; margin-top:20px;}
+.header_main .exit:hover{ color:#F90; text-decoration:underline;}
+.account_main .account_all{ width:940px; height:70px; margin:20px 30px;}
+.account_main .photo{ display:block; float:left; background:url(../images/photo1.jpg) center center no-repeat; width:64px; height:64px; border:1px solid #dedede;}
+/* .account_main .photo:hover{ display:block; background:url(../images/photo1_on.jpg) center center no-repeat; width:64px; height:64px;} */
+.account_all .account_info{ width:220px; height:70px; float:left; margin-left:15px;}
+.account_info p{ width:250px; height:30px; line-height:15px; font-size:14px; color:#333;}
+.account_info .name span{ color:#068EF2;}
+.account_info .warning{ color:#f90;}
+.account_all .sub_all{ float:left; margin-top:30px;}
+.sub_all .sub_email{ width:auto; padding:0 10px; height:30px; cursor:pointer; font-size:14px;}
+.account_all .web_link{ width:420px; height:70px; float:right; border-left:1px solid #dedede;}
+.web_link .link_gamecenter{ width:170px; height:70px; float:left; display:block; margin-left:25px; margin-top:10px; cursor:pointer;}
+.link_gamecenter span{ float:left;}
+.link_gamecenter .gc_left{ margin-left:10px;}
+.link_gamecenter .title{ font-size:14px; color:#666; height:24px; line-height:24px; text-decoration:none;}
+.link_gamecenter .txt{ font-size:12px; color:#068EF2; height:22px; line-height:22px; text-decoration:none;}
+.link_gamecenter .txt:hover{ font-size:12px; color:#f90; height:22px; line-height:22px; text-decoration:underline;}
+
+.web_link .link_recharge{ width:170px; height:70px; float:left; display:block; margin-left:25px; margin-top:10px; cursor:pointer;}
+.link_recharge span{ float:left;}
+.link_recharge .re_left{ margin-left:10px;}
+.link_recharge .title{ font-size:14px; color:#666; height:24px; line-height:24px; text-decoration:none;}
+.link_recharge .txt{ font-size:12px; color:#068EF2; height:22px; line-height:22px; text-decoration:none;}
+.link_recharge .txt:hover{ font-size:12px; color:#f90; height:22px; line-height:22px; text-decoration:underline;}
+
+.pay_info{ width:1005px; height:auto; margin:0 auto; margin-top:20px;}
+.pay_info h1{ width:980px; height:35px; line-height:35px; display:block; background:url(../images/line_bg.jpg) left top repeat-x; border:1px solid #ccc; font-size:14px; color:#666; padding-left:20px;}
+.pay_info table{border:1px solid #ccc; border-top:0;}
+.pay_info td{ height:42px; line-height:42px; color:#333;}
+
+.pay_info table .sum{ color:#ff8800; font-weight:bold; text-align:center;}
+.pay_info table .sub_pay{ width:60px; height:25px; line-height:25px; cursor:pointer; background-color:#ffa200; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.pay_info table .sub_pay:hover{ width:60px; height:25px; line-height:25px; cursor:pointer; background-color:#ffc53a; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.pay_info table .success{ color:#068EF2;}
+.pay_info table .error{ color:#f90;}
+
+
+
+/*֧��ҳ��*/
+.pay_center{ width:1000px; height:auto; margin:0 auto; padding-top:25px;}
+.pay_center .pay_infotxt{ width:1000px; height:35px; margin:0 auto; background:#fff; border:1px solid #ddd;}
+.pay_infotxt .info_title{ display:block; float:left; height:35px; line-height:35px; color:#666; margin-left:15px; font-size:12px;}
+.pay_infotxt .info_sum{ display:block; float:right; height:35px; line-height:35px; color:#666; margin-right:15px; font-size:12px;}
+.pay_infotxt .info_sum strong{ color:#ff8800; font-size:14px;}
+
+
+.pay_way{width:1002px; padding-top:15px; }
+.pay_way ul{ width:1002px; float:left; }
+#sidebar-tab{overflow:hidden;}
+#tab-title h3{color:#333;font-size:12px; float:left;}
+#tab-title h1{ color:#999; font-size:14px; font-weight:normal; float:left; padding-top:12px; margin:0 8px;}
+#tab-title{ float:left;}
+#tab-title .selected{ text-align:center; color:#555; font-weight:bold; font-size:15px; background: url(../images/box_xuanxiang_on.jpg) center center no-repeat; width:207px; height:38px; line-height:38px; display:block; position:relative; top:2px; float:left;} /*���ⱻѡ��ʱ����ʽ*/
+#tab-title span{color:#0C83FA; font-size:12px; cursor:pointer; background: url(../images/box_xuanxiang.jpg) center center no-repeat; width:207px; height:32px; line-height:32px; display:block; font-weight:normal; text-align:center; float:left; position:relative; top:6px;}
+#tab-content ul .box_title{ background: url(../images/box_main_title.jpg) left top no-repeat; width:910px; height:37px; line-height:37px;  color:#969696; font-size:12px; font-weight:normal; text-align:left; padding-left:50px;}
+#tab-content ul .box_top{ background: url(../images/box_main_top.jpg) left top no-repeat; width:960px; height:20px;}
+#tab-content ul .box_middle{ background:#FFF; border:2px solid #ccc; width:998px; height:auto; text-align:left; padding-bottom:20px;}
+#tab-content ul .box_foot{ background: url(../images/box_main_foot.jpg) left top no-repeat; width:960px; height:16px;}
+#lang-guess {
+	width: 894px;
+	background: #fffbcc;
+	border: 1px solid #e6db55;
+	text-align: center;
+	border-radius: 3px;
+}
+#tab-content .hide{display:none;} /*Ĭ���õ�һ��������ʾ����������*/
+#tab-content ul{overflow:hidden;}
+.queding_pay .qqlogin_btn{ background:url(../images/qqlogin.jpg) center center no-repeat; width:177px; height:39px; display:block; margin-left:40px; margin-top:15px;}
+.queding_pay .qqlogin_btn:hover{ background:url(../images/qqlogin_on.jpg) center center no-repeat; width:177px; height:39px; display:block;}
+
+/*����֧��*/
+.box_middle table{ margin:30px 50px;}
+.box_middle td{ height:65px; padding-left:10px;}
+.box_middle td label{ cursor:pointer;}
+.box_middle td label img{ border:1px solid #dedede; margin-left:5px;}
+.box_middle td .next{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; background-color:#ffa200; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.box_middle td .next:hover{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; background-color:#ffc53a; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.box_middle .webank_pay{ width:860px; margin:40px 70px;}
+.webank_pay .list1{ height:50px; border-bottom: dashed 1px #cdcdcd; line-height:30px;}
+.webank_pay .title{ font-size:14px; color:#333;}
+.webank_pay  span img{ border:1px solid #dedede; margin-left:5px;}
+.webank_pay .lei{ font-size:14px; color:#999; margin-left:15px;}
+.webank_pay .kuang{ font-size:14px; color:#333; margin-left:100px;}
+.webank_pay .kuang strong{ font-size:14px; color:#f90;}
+.webank_pay .list2{ height:24px; line-height:24px; background:#E8F7FF; border:1px solid #98DCF5; margin:10px 0; padding-left:25px; color:#444;}
+.webank_pay .list3{ margin:20px 0;}
+.webank_pay .list3 .paying{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; background-color:#ffa200; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.webank_pay .list3 .paying:hover{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; background-color:#ffc53a; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.webank_pay .list3 a{ font-size:12px; color:#068EF2; margin-left:15px;}
+.webank_pay .list3 a:hover{ font-size:12px; color:#f90;}
+
+
+/*���ѳ�ֵ*/
+.box_middle .hfrecharge{ width:800px; margin:30px 60px;}
+.box_middle .hfrecharge p label{ height:33px; border:1px solid #dedede; display:block; float:left; line-height:33px; margin-right:10px; cursor:pointer;}
+.box_middle .hfrecharge p label input{ margin-left:10px;}
+.box_middle .hfrecharge p .title{ float:left; display:block; height:33px; line-height:33px; margin-right:5px; font-size:14px;}
+.box_middle .hfrecharge p .czjg{ width:120px; height:24px; line-height:24px; color:#666; margin-top:5px;}
+.box_middle .hfrecharge .xlhao { height:24px; line-height:24px; width:180px; border:1px solid #ccc; margin-top:5px; color:#999;}
+.box_middle .hfrecharge .password { height:24px; line-height:24px; width:180px; border:1px solid #ccc; margin-top:5px; color:#999;}
+.box_middle .hfrecharge .paying{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; margin-left:60px; background-color:#ffa200; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.box_middle .hfrecharge .paying:hover{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; margin-left:60px; background-color:#ffc53a; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.box_middle .hfrecharge p{ margin-bottom:15px;}
+.box_middle .hfrecharge li{ color:#888; margin:4px 0;}
+.box_middle .hfrecharge .tishi{ color:#f90; font-size:14px; font-weight:bold; padding-bottom:5px;}
+
+.box_middle .hfrecharge_loading{ width:600px; height:80px; margin:70px 200px;}
+.box_middle .hfrecharge_loading .panduan span{ margin-left:10px; font-size:14px;}
+.box_middle .hfrecharge_loading .txt{ margin-left:41px; font-size:12px; color:#666;}
+.box_middle .hfrecharge_loading .txt strong{ font-size:12px; color:#ff6600; font-weight:normal;}
+.box_middle .hfrecharge_loading .txt a{ font-size:12px; color:#f90;}
+.box_middle .hfrecharge_loading .txt a:hover{ color:#068EF2; text-decoration:underline;}
+.hfrecharge_loading .queding_pay{ margin:20px 0; }
+.hfrecharge_loading .queding_pay .paying{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; margin-left:41px; background-color:#ffa200; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.hfrecharge_loading .queding_pay .paying:hover{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; margin-left:41px; background-color:#ffc53a; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+
+/*�����ֵ*/
+.box_middle .online_card{ width:880px; height:300px; margin:30px 60px; background:url(../images/online_card_bg.jpg) center center no-repeat;}
+.online_card p{ color:#f90; height:20px; line-height:20px;}
+.online_card h1 { font-size:14px; font-weight:normal; height:38px; line-height:38px;}
+.online_card h1 strong{ color:#ff8800;}
+.online_card .queding_pay{ margin:10px 0;}
+.online_card .queding_pay .paying{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; background-color:#ffa200; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.online_card .queding_pay .paying:hover{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; background-color:#ffc53a; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.online_card ul{ margin-top:40px;}
+.online_card li{ color:#888; width:400px; margin:4px 0;}
+.online_card .tishi{ color:#f90; font-size:14px; font-weight:bold; padding-bottom:5px;}
+
+/*2013.1.8���*/
+/*�����ֵ֧���ɹ�ҳ��*/
+.main_center .hfrecharge_loading{ width:600px; height:80px; padding:55px 200px 80px 200px;}
+.main_center .hfrecharge_loading .panduan span{ margin-left:10px; font-size:14px;}
+.main_center .hfrecharge_loading .txt{ margin-left:41px; font-size:12px; color:#666;}
+.main_center .hfrecharge_loading .txt strong{ font-size:12px; color:#ff6600; font-weight:normal;}
+.main_center .hfrecharge_loading .txt a{ font-size:12px; color:#f90;}
+.main_center .hfrecharge_loading .txt a:hover{ color:#068EF2; text-decoration:underline;}
+.hfrecharge_loading .queding_pay{ margin:20px 0; }
+.hfrecharge_loading .queding_pay .paying{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; margin-left:41px; background-color:#ffa200; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.hfrecharge_loading .queding_pay .paying:hover{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; margin-left:41px; background-color:#ffc53a; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.hfrecharge_loading .qqlogin_btn{ background:url(../images/qqlogin.jpg) center center no-repeat; width:177px; height:39px; display:block;  margin-top:20px;}
+.hfrecharge_loading .qqlogin_btn:hover{ background:url(../images/qqlogin_on.jpg) center center no-repeat; width:177px; height:39px; display:block;}
+
+.box_middle .dkrecharge{ width:800px; margin:30px 60px;}
+.box_middle .dkrecharge p label{ height:33px; border:1px solid #dedede; display:block; float:left; line-height:33px; margin-right:10px; cursor:pointer;}
+.box_middle .dkrecharge p label input{ margin-left:10px;}
+.box_middle .dkrecharge p .title{ float:left; display:block; height:33px; line-height:33px; margin-right:5px; font-size:14px;}
+.box_middle .dkrecharge p .czjg{ width:120px; height:24px; line-height:24px; color:#666; margin-top:5px;}
+.box_middle .dkrecharge .xlhao { height:24px; line-height:24px; width:180px; border:1px solid #ccc; margin-top:5px; color:#999;}
+.box_middle .dkrecharge .password { height:24px; line-height:24px; width:180px; border:1px solid #ccc; margin-top:5px; color:#999;}
+.box_middle .dkrecharge .paying{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; margin-left:60px; background-color:#ffa200; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.box_middle .dkrecharge .paying:hover{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; margin-left:60px; background-color:#ffc53a; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.box_middle .dkrecharge p{ margin-bottom:15px;}
+.box_middle .dkrecharge li{ color:#888; margin:4px 0;}
+.box_middle .dkrecharge .tishi{ color:#f90; font-size:14px; font-weight:bold; padding-bottom:5px;}
+.dkrecharge .queding_pay{ margin:10px 0;}
+.dkrecharge .queding_pay .paying{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; background-color:#ffa200; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.dkrecharge .queding_pay .paying:hover{ width:auto; padding:0 20px; height:30px; cursor:pointer; font-size:14px; background-color:#ffc53a; border:1px solid #de6300; color:#FFF; font-weight:bold;}
+.dkrecharge h1 { font-size:14px; font-weight:normal; height:38px; line-height:38px;}
+.dkrecharge h1 strong{ color:#ff8800;}
+.box_middle .dkrecharge p .xzzl{ float:left; margin-top:10px;}
+.box_middle .dkrecharge p .junwang{ margin-left:10px;}
+
+/*2013.1.10 ���*/
+.box_middle .chucuo{ height:16px; line-height:16px; color:#f00; font-size:12px; font-weight:normal; margin-left:60px;}
+.box_middle .chucuo img{ margin:0 5px;}
+.box_middle .xsphoto_xlh{ position:absolute; top:320px; left:650px;}
+
+.box_middle .xsphoto_mm{ position:absolute; top:400px; left:650px;}
+
+
+

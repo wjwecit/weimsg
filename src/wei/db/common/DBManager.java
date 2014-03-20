@@ -16,9 +16,9 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  * @author wei
  * 
  */
-public class WeiDBManager {
+public class DBManager {
 
-	private static final Logger log = Logger.getLogger(WeiDBManager.class);
+	private static final Logger log = Logger.getLogger(DBManager.class);
 	/** mysql类型DB, 值为{@value} **/
 	public static final int DB_TYPE_MYSQL = 0x1;
 

@@ -39,53 +39,6 @@ public class DbTemplate {
 
 	private static final Logger log=Logger.getLogger(DbTemplate.class);
 	
-	/**mysql类型DB, 值为{@value}**/
-	public static final int DB_TYPE_MYSQL=0x1;
-	
-	/**oracle类型DB, 值为{@value}**/
-	public static final int DB_TYPE_ORACLE=0x2;
-	
-	private static DataSource dataSource;
-	
-	/**数据库类型, 可以是{@link #DB_TYPE_MYSQL}和{@link #DB_TYPE_ORACLE}**/
-	public  static int dbType;
-	
-	private volatile static boolean isInit=false;
-	
-	/**用来把Connection绑定到当前线程上的变量  **/
-    private static ThreadLocal<Connection> threadSession = new ThreadLocal<Connection>();  
-	
-	static{
-		try {
-			initConnPool();
-		} catch (Exception e) {
-			log.error("Can not init connection pool,"+e.getLocalizedMessage());
-			e.printStackTrace();
-		}
-	}
-	
-	private synchronized static void initConnPool(){
-		ComboPooledDataSource cpds = new ComboPooledDataSource("weidb");
-		dataSource=cpds;
-		isInit=true;
-		String dbClass=cpds.getDriverClass();
-		if(dbClass.matches(".*\\.mysql\\..*")){
-			dbType=DB_TYPE_MYSQL;
-		}else if(dbClass.matches(".*\\.oracle\\..*")){
-			dbType=DB_TYPE_ORACLE;
-		}else{
-			dbType=0;
-		}
-		log.info("Connection pool init successfully. "+cpds.toString());
-	}
-
-	public DataSource getDataSource() {
-		if(!isInit){
-			initConnPool();
-		}
-		return dataSource;
-	}
-	
 	/**
 	 * 将查询结果映射到实体Map中.
 	 * 

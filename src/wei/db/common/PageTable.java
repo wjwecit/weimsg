@@ -14,58 +14,50 @@ import org.apache.log4j.Logger;
  * @author Wangjw 显示分页表格数据，使用原生态的SQL统计，并返回数组形式之数据。
  */
 public class PageTable {
-	/**
-	 * slf日志对象
-	 */
+	
+	/**log日志对象**/
 	private static Logger log = Logger.getLogger(PageTable.class);
-	/**
-	 * 查询结果总页数
-	 */
+	
+	/**查询结果总页数 **/
 	private long totalPage = -1;
-	/**
-	 * 返回字串数组格式之数据
-	 */
+	
+	/**返回字串数组格式之数据**/
 	private ArrayList<HashMap<String,String>> dataArray;
 	
-
-	/**
-	 * 查询结果中总记录数
-	 */
+	/**查询结果中总记录数**/
 	private long totalRow = 0;
-	/**
-	 * 分页大小
-	 */
+	
+	/**分页大小**/
 	private int pageSize;
-	/**
-	 * 当前页面中记录数
-	 */
+	
+	/**当前页面中记录数**/
 	private long currentPageRows = 0;
-	/**
-	 * 当前页数
-	 */
+	
+	/**当前页数**/
 	private long currentPage;
-	/**
-	 * 查询SQL语句
-	 */
+	
+	/**查询SQL语句**/
 	private String sql;
-	/**
-	 * 查询结果中记录总列数
-	 */
+	
+	/**查询结果中记录总列数**/
 	private int columnCount = 1;
-	/**
-	 * 标识查询是否成功
-	 */
+	
+	/**标识查询是否成功**/
 	private boolean inited = false;
-	/**
-	 * 默认页面大小页面
-	 */
+	
+	/**默认页面大小页面**/
 	public static final int INIT_PAGE_SIZE = 10;
-	/**
-	 * 默认页数
-	 */
+	
+	/**最大页面大小**/
+	public static final int MAX_PAGE_SIZE = 999;
+	
+	/**默认页数**/
 	public static final int INIT_CURRENT_PAGE = 1;
+	
 
 	private String[] labels = null;
+	
+	private DbManager dbManager;
 
 	/**
 	 * 默认构造函数
@@ -248,7 +240,10 @@ public class PageTable {
 	}
 
 	private Connection getConnection() {
-		return new DbTemplate().getConnection();
+		if(dbManager==null){
+			dbManager=new DbManager();
+		}
+		return dbManager.getConnection();
 	}
 
 	public boolean isInited() {

@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.sql.DataSource;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
@@ -26,7 +25,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
 import org.apache.log4j.Logger;
-import com.mchange.v2.c3p0.ComboPooledDataSource;
+
 import wei.db.annotation.TableKey;
 
 
@@ -42,7 +41,11 @@ public class DbTemplate {
 	private DbManager dbManager;
 	
 	public DbTemplate(){
-		dbMangaer=new DbManager();
+		dbManager=new DbManager();
+	}
+	
+	private Connection getConnection(){
+		return dbManager.getConnection();
 	}
 	/**
 	 * 将查询结果映射到实体Map中.

@@ -39,6 +39,11 @@ public class DbTemplate {
 
 	private static final Logger log=Logger.getLogger(DbTemplate.class);
 	
+	private DbManager dbManager;
+	
+	public DbTemplate(){
+		dbMangaer=new DbManager();
+	}
 	/**
 	 * 将查询结果映射到实体Map中.
 	 * 
@@ -338,54 +343,6 @@ public class DbTemplate {
 			}
 		}
 	}
-	
-	 /** 
-     * 根据数据库的默认连接参数获取数据库的Connection对象，并绑定到当前线程上 
-     * @return 成功，返回Connection对象，否则返回null
-     */  
-    public synchronized Connection getConnection(){
-        Connection conn = threadSession.get(); //先从当前线程上取出连接实例           
-        if(null == conn){ //如果当前线程上没有Connection的实例
-            try {
-            	if (!isInit) {
-        			initConnPool();
-        		}
-        		if(dataSource!=null){
-        			conn =dataSource.getConnection(); // 从连接池中取出一个连接实例
-                    threadSession.set(conn);  //把它绑定到当前线程上
-        		}else{
-        			log.error("Connection can not fetch from datasource!");
-        		}
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return conn;
-    }
-    
-    /**
-     * 关闭session中已保存的数据库连接,如果当前线程中无connection则做Nothing.
-     */
-    public void close(){
-    	close(threadSession.get());
-    }	
-    
-    /**
-     * 关闭连接并释放session
-     * @param conn 关闭指定的连接
-     */
-	protected void close(Connection conn) {
-		if (conn != null) {
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				log.error("关闭连接时出现异常", e);
-			} finally {
-				threadSession.remove(); // 卸装线程绑定
-			}
-		}
-	}
-	
 	
 	/**
 	 * 将实体属性映射到map,必须符合java bean规范,拥有get读取方法．

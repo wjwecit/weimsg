@@ -15,7 +15,7 @@ import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import wei.db.common.DbTemplate;
-import wei.db.common.PageTable;
+import wei.db.common.MysqlPageTable;
 import wei.db.common.TransactionExecutor;
 import wei.web.mvc.model.AreaChina;
 
@@ -34,7 +34,7 @@ public class Dbtest {
 		String str="<script type=\"text/javascript\"></script><script type=\"text/javascript\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\"></script>";
 		str=str.replace("\"", "\\\"");
 		System.out.println(str);
-		PageTable table=new PageTable();
+		MysqlPageTable table=new MysqlPageTable();
 		table.setSql("select * from areachina");
 		ArrayList<HashMap<String, String>> list=table.getDataArray();
 		for(HashMap<String, String> map:list){

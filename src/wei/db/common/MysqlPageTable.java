@@ -13,10 +13,10 @@ import org.apache.log4j.Logger;
 /**
  * @author Wangjw 显示分页表格数据，使用原生态的SQL统计，并返回数组形式之数据。
  */
-public class PageTable {
+public class MysqlPageTable {
 	
 	/**log日志对象**/
-	private static Logger log = Logger.getLogger(PageTable.class);
+	private static Logger log = Logger.getLogger(MysqlPageTable.class);
 	
 	/**查询结果总页数 **/
 	private long totalPage = -1;
@@ -62,12 +62,12 @@ public class PageTable {
 	/**
 	 * 默认构造函数
 	 */
-	public PageTable() {
+	public MysqlPageTable() {
 		this.currentPage = INIT_CURRENT_PAGE;
 		this.pageSize = INIT_PAGE_SIZE;
 	}
 
-	public PageTable(String selectsql, long pno, int ps) {
+	public MysqlPageTable(String selectsql, long pno, int ps) {
 		this.sql = selectsql;
 		if (pno < 1) {
 			pno = INIT_CURRENT_PAGE;

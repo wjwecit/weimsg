@@ -1,6 +1,7 @@
 package wei.web.wm.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 import wei.db.common.DbTemplate;
+import wei.web.mvc.model.AreaChina;
 import wei.web.mvc.model.Pos;
 import wei.web.util.RequestUtils;
 
@@ -47,9 +49,10 @@ public class BusinessServlet extends HttpServlet {
 			return;
 		}
 		if(action.equalsIgnoreCase("q")){
-			Pos pos=template.getBean(Pos.class, "select * from pos where did=? order by ptime desc limit 1",new Object[]{did});
-			if(pos==null)return;
-			String res=new JSONObject(pos).toString();
+			//Pos obj=template.getBean(Pos.class, "select * from pos where did=? order by ptime desc limit 1",new Object[]{did});
+			AreaChina obj=template.getBean(AreaChina.class, "select * from areachina where areaCode=? limit 1",new Object[]{did});
+			if(obj==null)return;
+			String res=new JSONObject(obj).toString();
 			response.getWriter().write(res);
 			response.flushBuffer();
 		}

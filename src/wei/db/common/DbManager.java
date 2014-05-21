@@ -74,7 +74,7 @@ public class DbManager {
 	public synchronized Connection getConnection() {
 		Connection conn = threadSession.get(); // 先从当前线程上取出连接实例
 		try {			
-			if (null == conn || !conn.isClosed()) { // 如果当前线程上没有Connection的实例
+			if (null == conn || conn.isClosed()) { // 如果当前线程上没有Connection的实例
 				if (!isInit) {
 					initConnPool();
 				}

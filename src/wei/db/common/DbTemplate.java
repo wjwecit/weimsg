@@ -362,7 +362,6 @@ public class DbTemplate {
 				isInTransaction=true;
 				executor.execute();
 				conn.commit();
-				isInTransaction=false;
 			} catch (SQLException e) {
 				e.printStackTrace();
 				try {
@@ -371,6 +370,7 @@ public class DbTemplate {
 					e1.printStackTrace();
 				}
 			} finally {
+				isInTransaction=false;
 				dbManager.close(conn);
 			}
 		}

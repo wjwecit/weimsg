@@ -117,5 +117,23 @@ public class DbManager {
 			}
 		}
 	}
+	
+	protected void commitAndClose(Connection conn){
+		if (conn != null) {
+			try {
+				conn.commit();
+			} catch (SQLException e) {
+				log.error("提交连接时出现异常", e);
+			} finally {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					log.error("关闭连接时出现异常", e);
+				}
+				/**卸装线程绑定**/
+				threadSession.remove();
+			}
+		}
+	}
 
 }

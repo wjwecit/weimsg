@@ -60,7 +60,7 @@ public abstract class AbstractPageTable {
 
 	private String[] labels = null;
 	
-	private DbManager dbManager;
+	private DBManager dbManager;
 
 	/**
 	 * 默认构造函数
@@ -243,7 +243,7 @@ public abstract class AbstractPageTable {
 
 	protected Connection getConnection() {
 		if(dbManager==null){
-			dbManager=new DbManager();
+			dbManager=new DBManager();
 		}
 		return dbManager.getConnection();
 	}

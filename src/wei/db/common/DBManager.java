@@ -16,9 +16,9 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  * @author wei
  * 
  */
-public class DbManager {
+public class DBManager {
 
-	private static final Logger log = Logger.getLogger(DbManager.class);
+	private static final Logger log = Logger.getLogger(DBManager.class);
 	/** mysql类型DB, 值为{@value} **/
 	public static final int DB_TYPE_MYSQL = 0x1;
 
@@ -33,7 +33,7 @@ public class DbManager {
 	private volatile static boolean isInit = false;
 
 	/** 用来把Connection绑定到当前线程上的变量 **/
-	private static ThreadLocal<Connection> threadSession = new ThreadLocal<Connection>();
+	private ThreadLocal<Connection> threadSession = new ThreadLocal<Connection>();
 
 	static {
 		try {
@@ -73,7 +73,7 @@ public class DbManager {
 	 */
 	public synchronized Connection getConnection() {
 		Connection conn = threadSession.get(); // 先从当前线程上取出连接实例
-		try {			
+		try {
 			if (null == conn || conn.isClosed()) { // 如果当前线程上没有Connection的实例
 				if (!isInit) {
 					initConnPool();
@@ -112,25 +112,31 @@ public class DbManager {
 			} catch (SQLException e) {
 				log.error("关闭连接时出现异常", e);
 			} finally {
-				/**卸装线程绑定**/
+				/** 卸装线程绑定 **/
 				threadSession.remove();
 			}
 		}
 	}
-	
-	protected void commitAndClose(Connection conn){
+
+	/**
+	 * 提交事务并关闭 sql 连接。
+	 * 
+	 * @param conn
+	 *            即将被关闭的连接
+	 */
+	protected void commitAndClose(Connection conn) {
 		if (conn != null) {
 			try {
 				conn.commit();
 			} catch (SQLException e) {
-				log.error("提交连接时出现异常", e);
+				log.error("提交事务时出现异常", e);
 			} finally {
 				try {
 					conn.close();
 				} catch (SQLException e) {
 					log.error("关闭连接时出现异常", e);
 				}
-				/**卸装线程绑定**/
+				/** 卸装线程绑定 **/
 				threadSession.remove();
 			}
 		}

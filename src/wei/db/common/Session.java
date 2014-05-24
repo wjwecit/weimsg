@@ -29,25 +29,27 @@ import org.apache.log4j.Logger;
 import wei.db.annotation.TableKey;
 
 /**
- * @author Qin-Wei
+ * 数据库核心操作类, 依赖近似原生态的jdbc处理方式完成数据操作。
  * 
+ * @author Qin-Wei
+ * @since 2014-3-13
  */
 public class Session {
 
 	private static final Logger log = Logger.getLogger(Session.class);
 
-	private DbManager dbManager;
+	private DBManager dbManager;
 
 	private Connection g_connection = null;
 
 	private boolean isInTransaction = false;
 
 	public Session() {
-		dbManager = new DbManager();
+		dbManager = new DBManager();
 	}
 
 	public Session(Connection conn) {
-		dbManager = new DbManager();
+		dbManager = new DBManager();
 		g_connection = conn;
 	}
 
@@ -60,6 +62,11 @@ public class Session {
 		return g_connection != null ? g_connection : dbManager.getConnection();
 	}
 
+	/**
+	 * 开启一个事务,这会将现有的连接设置autoCommit=false,后续的操作直至遇到{@link #endTransaction} 时 才会进行
+	 * 事务的commit或者rollback, 并关闭连接. 因此,一旦开启了事务,必须显式结束事务,否则
+	 * 将引发连接泄漏.
+	 */
 	public void beginTransaction() {
 		try {
 			if (g_connection == null || g_connection.isClosed()) {
@@ -72,6 +79,9 @@ public class Session {
 		}
 	}
 
+	/**
+	 * 配合{@link #beginTransaction()}进行使用,提交事务并关闭连接
+	 */
 	public void endTransaction() {
 		dbManager.commitAndClose(g_connection);
 		isInTransaction = true;
@@ -144,7 +154,7 @@ public class Session {
 		ResultSetHandler<T> handler = new BeanHandler<T>(clz);
 		try {
 			T bean = run.query(getConnection(), sql, handler, params);
-			log.debug("Query SQL=" + sql + ";params=" + arrayToString(params) + ";bean=" + bean);
+			log.debug("Query SQL=" + sql + ";params=" + java.util.Arrays.toString(params) + ";bean=" + bean);
 			return bean;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -326,7 +336,7 @@ public class Session {
 			if (pstmt != null) {
 				pstmt.close();
 			}
-			log.debug("Update:" + res + "; SQL=" + sql + ";params=" + arrayToString(params) + ";");
+			log.debug("Update:" + res + "; SQL=" + sql + ";params=" + java.util.Arrays.toString(params) + ";");
 		} catch (SQLException e) {
 			throw e;
 		} finally {
@@ -367,37 +377,11 @@ public class Session {
 				try {
 					sqlType = pmd.getParameterType(i + 1);
 				} catch (SQLException e) {
-
+					log.error(e.getMessage());
 				}
 				pstmt.setNull(i + 1, sqlType);
 			}
 		}
-	}
-
-	/**
-	 * 数组转成字符串,使用逗号分隔.
-	 * 
-	 * @param array
-	 *            要转的数组对象
-	 * @return 如果原数组为null,则返回null,否则返回使用逗号连接后的字串.
-	 */
-	public String arrayToString(Object[] array) {
-		if (array == null) {
-			return null;
-		}
-		StringBuilder sb = new StringBuilder("[");
-		for (Object obj : array) {
-			if (String.class.isInstance(obj)) {
-				sb.append('"').append(obj).append('"');
-			} else {
-				sb.append(obj.toString());
-			}
-			sb.append(",");
-		}
-		int index = sb.lastIndexOf(",");
-		sb.replace(index, sb.length(), "");
-		sb.append("]");
-		return sb.toString();
 	}
 
 	/**
@@ -406,7 +390,7 @@ public class Session {
 	 * @param bean实体
 	 * @return map类型的映射
 	 */
-	private Map<String, Object> mapBeanProperties(Object bean) {
+	private static Map<String, Object> mapBeanProperties(Object bean) {
 		HashMap<String, Object> setterMap = new HashMap<String, Object>();
 		try {
 			BeanInfo info = Introspector.getBeanInfo(bean.getClass());
@@ -440,7 +424,7 @@ public class Session {
 	 *            实体
 	 * @return 字串格式的主键字段名
 	 */
-	public String getKeyPropertyName(Object bean) {
+	public static String getKeyPropertyName(Object bean) {
 		String res = null;
 		try {
 			Field[] fields = bean.getClass().getDeclaredFields();

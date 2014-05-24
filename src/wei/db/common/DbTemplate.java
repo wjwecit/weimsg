@@ -18,10 +18,10 @@ public class DbTemplate {
 
 	private static final Logger log = Logger.getLogger(DbTemplate.class);
 
-	private DbManager dbManager;
+	private DBManager dbManager;
 
 	public DbTemplate() {
-		dbManager = new DbManager();
+		dbManager = new DBManager();
 	}
 
 	private Connection getConnection() {
